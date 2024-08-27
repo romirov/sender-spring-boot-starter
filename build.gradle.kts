@@ -17,7 +17,8 @@ dependencies {
 
 	// Spring Boot dependencies
 	implementation("org.springframework.boot:spring-boot-starter")
-
+	implementation ("org.springframework.kafka:spring-kafka")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
