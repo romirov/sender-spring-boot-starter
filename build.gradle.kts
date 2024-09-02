@@ -8,12 +8,10 @@ plugins {
 val projectGroup: String by project
 val projectVersion: String by project
 
-val kotestVersion: String by project
-val kotestSpringVersion: String by project
-
 dependencies {
 	// Kotlin dependencies
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation(libs.jacksonDatabind)
 
 	// Spring Boot dependencies
 	implementation("org.springframework.boot:spring-boot-starter")
@@ -22,10 +20,11 @@ dependencies {
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
-	testImplementation("io.kotest.extensions:kotest-extensions-spring:$kotestSpringVersion")
-	testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
-	testImplementation("io.kotest:kotest-property:$kotestVersion")
+	testImplementation ("org.springframework.kafka:spring-kafka-test")
+	testImplementation(libs.kotest.runner.junit5)
+	testImplementation(libs.kotest.assertions.core)
+	testImplementation(libs.kotest.property)
+	testImplementation(libs.kotest.extensions.spring)
 }
 
 java {

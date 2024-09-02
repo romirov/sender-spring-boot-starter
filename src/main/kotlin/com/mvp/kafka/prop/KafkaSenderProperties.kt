@@ -9,5 +9,7 @@ data class KafkaSenderProperties @ConstructorBinding constructor(
     val enabled: Boolean,
     val bootstrapServers: String,
     val topic: String,
+    val numPartitions: Int,
+    val replicationFactor: Int,
     val producer: KafkaProperties.Producer
 )
